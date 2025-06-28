@@ -4,7 +4,10 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import os
 
-app = Flask(__name__)
+template_dir = os.path.abspath('templates/')
+static_dir = os.path.abspath('static/')
+
+app = Flask(__name__, template_folder=template_dir, static_folder=static_dir)
 app.secret_key = 'your-secret-key-change-this-in-production'
 
 # Email configuration
